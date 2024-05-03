@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  --background: radial-gradient(at top, #081623, #0A1A2C, #0C1D30);
+  --teclado: #081420;
+  --rosa: #DC3D8A;
+  --rosa-escuro: #B10B5C;
+  --verde-agua: #2FE7CA;
+  --cor-tecla: #08121C;
+  --branca: #fff;
+
+  --sombra-teclado-des: box-shadow: 0px 30px 25px 3px rgba(47, 231, 202, 0.7);
+  --sombra-teclado-ativ: box-shadow: 0px 1px 4px 0.5px rgba(220, 61, 138, 0.7);
+
+}
+
+body {
+  align-items: center;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.word-1{
+  color: var(--verde-agua);
+  text-shadow: 0px 4px 30px var(--verde-agua);
+}
+
+.word-2{
+  color: var(--rosa);
+  text-shadow: 0px 4px 30px var(--rosa);
+  
+}
+
+.teclado {
+  background: var(--teclado);
+  box-shadow: 0px 15px 25px 3px rgba(47, 231, 202, 0.7);
+  border-radius: 30px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.tecla {
+  background-color: var(--cor-tecla);
+  border-radius: 30px;
+  box-shadow: 0px 1px 4px 0.5px rgba(47, 231, 202, 0.3);
+  color: var(--verde-agua);
+  cursor: pointer;
+  height: 120px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 120px;
+  text-align: center;
+  width: 120px;
+}
+
+.tecla:hover {
+  background-color: var(--rosa); 
+  box-shadow: 3px 3px 0px var(--rosa-escuro) inset;
+  color: #fff;
+}
+
+.tecla.ativa,
+.tecla:active {
+  background-color: var(--rosa);
+  border: 4px solid  var(--rosa);
+  box-shadow: 3.5px 3px 0 var(--rosa-escuro) inset;
+  color: var(--branca);
+  outline: none;
+}
+
+.tecla.focus,
+.tecla:focus {
+  outline: none;
+  color: var(--rosa);
+  box-shadow: 0px 1px 4px 0.5px rgba(220, 61, 138, 0.7);
+}
+
+.tecla:focus:hover{
+  color: #fff;
+  box-shadow: none;
+  box-shadow: 3.5px 4px 0px var(--rosa-escuro) inset; 
+}
+
+
+.tecla.active:focus,
+.tecla:active:focus {
+  color: var(--branca);
+  box-shadow: 5px 5px 0 var(--rosa-escuro) inset;
+}
